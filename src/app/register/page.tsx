@@ -24,7 +24,7 @@ const signUpSchema = z.object({
   username: z.string().min(3, "Nome de usuário deve ter pelo menos 3 caracteres"),
   email: z.string().email().regex(/@ufpr\.br$/, "Email deve ser do domínio @ufpr.br"),
   password: z.string().min(6, "Senha deve ter pelo menos 6 caracteres"),
-  gender: z.enum(["masculino", "feminino", "outros"], "Escolha um gênero válido"),
+  gender: z.enum(["masculino", "feminino", "outros"]),
 });
 
 type SignUpSchema = z.infer<typeof signUpSchema>;
